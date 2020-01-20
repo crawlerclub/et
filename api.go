@@ -1,10 +1,17 @@
 package et
 
 import (
+	"fmt"
+	"strings"
+
 	"crawler.club/dl"
 )
 
 func (p *Parser) ParseURL(url string) ([]*UrlTask, []map[string]interface{}, error) {
+	url = strings.TrimSpace(url)
+	if url == "" {
+		return nil, nil, fmt.Errorf("empty url")
+	}
 	req := &dl.HttpRequest{Url: url}
 	if p.UA == "google" || p.UA == "pc" || p.UA == "mobile" {
 		req.Platform = p.UA
