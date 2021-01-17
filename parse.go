@@ -8,7 +8,7 @@ import (
 
 	"github.com/antchfx/htmlquery"
 	"github.com/crawlerclub/ce"
-	"github.com/tkuchiki/parsetime"
+	"github.com/liuzl/parsetime"
 	"golang.org/x/net/html"
 	"zliu.org/goutil"
 )
