@@ -31,10 +31,23 @@ func (p *parsers) get(fname string, refresh bool) (*Parser, error) {
 
 var pool = &parsers{items: make(map[string]*Parser)}
 
-func Parse(fname, url, page string) ([]*UrlTask, []map[string]interface{}, error) {
+func Parse(fname, url, page string) ([]map[string]interface{}, error) {
 	p, err := pool.get(fname, false)
 	if err != nil {
-		return nil, nil, err
+		return nil, err
 	}
-	return p.Parse(page, url)
+	_, ret, err := p.Parse(page, url)
+	return ret, err
+}
+
+func ParseExt(fname, url, page string) (string, error) {
+	ret, err := Parse(fname, url, page)
+	if err != nil {
+		return "", err
+	}
+	b, err := json.Marshal(ret)
+	if err != nil {
+		return "", err
+	}
+	return string(b), nil
 }
