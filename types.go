@@ -19,6 +19,7 @@ type Rule struct {
 type Parser struct {
 	Name          string             `json:"name"`
 	DefaultFields bool               `json:"default_fields"`
+	ZipContent    bool               `json:"zip_content"`
 	ExampleUrl    string             `json:"example_url"`
 	UA            string             `json:"ua"`
 	Urls          []string           `json:"urls"`

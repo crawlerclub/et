@@ -117,6 +117,11 @@ func (p *Parser) Parse(
 			}
 		}
 	}
+	if p.ZipContent {
+		for _, v := range items {
+			v["zip_content_"] = goutil.Base64zlibEncode(page)
+		}
+	}
 	items, err = p.RunJs(items)
 	return urlList, items, err
 }

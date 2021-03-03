@@ -25,5 +25,5 @@ require (
 	github.com/xgolib/tldextract v0.0.0-20190110090619-994b8e2666c2 // indirect
 	golang.org/x/net v0.0.0-20201224014010-6772e930b67b
 	gopkg.in/sourcemap.v1 v1.0.5 // indirect
-	zliu.org/goutil v0.0.0-20190215100315-4dfc4931403a
+	zliu.org/goutil v0.0.0-20210303151450-fd3cf96f777c
 )
