@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
+	"crawler.club/ce"
 	"github.com/antchfx/htmlquery"
-	"github.com/crawlerclub/ce"
 	"github.com/liuzl/parsetime"
 	"golang.org/x/net/html"
 	"zliu.org/goutil"
